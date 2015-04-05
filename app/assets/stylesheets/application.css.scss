@@ -1,0 +1,208 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require owl.carousel
+ *= require owl.theme
+ */
+
+ @import "bourbon";
+ @import "base/base";
+ @import "neat";
+
+.wrapper
+{
+    @include outer-container();
+}
+
+body
+{
+    color: #000000;
+    header
+    {
+        margin-top: 3em;
+        section.logo
+        {
+            @include span-columns(4);
+            h1
+            {
+                font-size: 20pt;
+            }
+        }
+        nav
+        {
+            @include shift(2);
+            @include span-columns(6);
+
+            ul
+            {
+                margin-top: 1em;
+                float: right;
+                list-style-type: none;
+
+                li
+                {
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    font-size: 0.825em;
+
+                    li:last-child
+                    {
+                        margin-right: 0px;
+                    }
+                    a, a:visited
+                    {
+                        color: #AAA;
+                        font-weight: bold;
+                        font-family: Helvetica, Arial, sans-serif;
+                        text-transform: uppercase;
+
+                        &:hover
+                        {
+                            color: #00FF00;
+                        }
+                    }
+                    &.current
+                    {
+                        a, a:visited
+                        {
+                            color: #000;
+                        }
+                    }
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    main
+    {
+        margin-top: 3em;
+
+        nav#carousel-control-injection-area
+        {
+            @include span-columns(12);
+            text-align: right;
+            margin-bottom: 10px;
+
+            .owl-buttons
+            {
+                @include span-columns(1.5);
+                float: right;
+                clear: both;
+                color: #AAA;
+                font-weight: bold;
+                font-family: Helvetica, Arial, sans-serif;
+                text-transform: uppercase;
+                font-size: 0.75em;
+                .owl-prev
+                {
+                    float: left;
+                    cursor: pointer;
+                    text-align: right;
+                    &:before
+                    {
+                        content: "< ";
+                    }
+
+                    &:after
+                    {
+                        content: " / ";
+                    }
+                }
+
+                .owl-next
+                {
+                    float: left;
+                    cursor: pointer;
+                    text-align: right;
+                    &:before
+                    {
+                        content: "\00a0";
+                    }
+                    &:after
+                    {
+                        content: " >";
+                    }
+                }
+            }
+        }
+
+        .project-thumb
+        {
+            @include span-columns(6);
+        }
+
+        section.carousel.left, section.carousel.right
+        {
+            @include span-columns(7);
+
+        }
+
+        section.carousel.right .owl-theme .owl-controls
+        {
+            text-align: right;
+        }
+
+        section.carousel.left .owl-theme .owl-controls, section.carousel.top .owl-theme .owl-controls
+        {
+            text-align: left;
+        }
+
+        section.carousel
+        {
+            #carousel > .owl-wrapper-outer > .owl-wrapper > .owl-item > .item > img
+            {
+                width: 100%;
+            }
+        }
+
+        article
+        {
+
+            @include span-columns(4);
+            &.full-width
+            {
+                @include span-columns(3);
+                margin-top: -30px;
+                float: right;
+
+                h1
+                {
+                    font-size: 2.2em;
+                    font-weight: bold;
+                }
+                h2
+                {
+                    font-size: 1.1em;
+                    color: #555;
+                    font-weight: normal;
+                }
+            }
+            h1
+            {
+                //font-size: 32pt;
+                font-size: 2.7em;
+                margin-bottom: 0px;
+            }
+
+        }
+
+        section.carousel.top
+        {
+            @include span-columns(12);
+            .owl-wrapper-outer
+            {
+                float: left;
+            }
+        }
+    }
+}

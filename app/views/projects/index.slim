@@ -1,0 +1,4 @@
+- @projects.each do |project|
+    .project-thumb
+        = link_to project_path(project) do
+            = image_tag(project.pictures.first.path.side_carousel.url)
