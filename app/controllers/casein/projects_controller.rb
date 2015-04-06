@@ -79,7 +79,7 @@ module Casein
     private
 
       def project_params
-        params.require(:project).permit(:title, :subtitle, :content, :client, :client_url, :completion_date, :published, :pictures => [], :captions => [])
+        params.require(:project).permit(:title, :subtitle, :content, :order, :client, :client_url, :completion_date, :published, :pictures => [], :captions => [])
       end
 
   end

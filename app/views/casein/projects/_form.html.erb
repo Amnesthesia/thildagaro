@@ -21,8 +21,11 @@
 </div>
 
 <div class="row">
-	<div class="col-lg-11">
+	<div class="col-lg-8">
 		<%= casein_text_field f, f.object, :title, {casein_label: "Rubrik"} %>
+	</div>
+	<div class="col-lg-3">
+		<%= casein_number_field f, f.object, :order, {casein_label: "Listprioritet"} %>
 	</div>
 	<div class="col-lg-1">
 		<%= casein_check_box f, f.object, :published, {casein_label: "Publicera"} %>
