@@ -14,7 +14,7 @@ module Casein
 
     def show
       @casein_page_title = 'View project'
-      @project = Project.find params[:id]
+      @project = Project.friendly.find params[:id]
     end
 
     def new
@@ -50,7 +50,7 @@ module Casein
     def update
       @casein_page_title = 'Update project'
 
-      @project = Project.find params[:id]
+      @project = Project.friendly.find params[:id]
 
       if project_params[:order].is_a? Integer and Project.exists?(order: project_params[:order])
           Project.where(order: project_params[:order]).each do |p|
@@ -83,7 +83,7 @@ module Casein
     end
 
     def destroy
-      @project = Project.find params[:id]
+      @project = Project.friendly.find params[:id]
 
       @project.destroy
       flash[:notice] = 'Project has been deleted'

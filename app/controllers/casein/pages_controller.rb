@@ -14,7 +14,7 @@ module Casein
 
     def show
       @casein_page_title = 'Visa sidor'
-      @page = Page.find params[:id]
+      @page = Page.friendly.find params[:id]
     end
 
     def new
@@ -54,7 +54,7 @@ module Casein
     def update
       @casein_page_title = 'Uppdatera sida'
 
-      @page = Page.find params[:id]
+      @page = Page.friendly.find params[:id]
 
       if !page_params[:front].nil?
          if Page.exists?(front: true)
@@ -90,7 +90,7 @@ module Casein
     end
 
     def destroy
-      @page = Page.find params[:id]
+      @page = Page.friendly.find params[:id]
 
       @page.destroy
       flash[:notice] = 'Sidan har TERMINERATS. BAM.'
