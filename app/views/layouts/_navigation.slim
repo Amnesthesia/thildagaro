@@ -1,0 +1,15 @@
+nav
+    ul(data-no-turbolink)
+        - if params[:controller] == 'projects'
+            li.navigation-item.current
+                = link_to "Work", projects_path
+        - else
+            li.navigation-item
+                = link_to "Work", projects_path
+        - Page.all.where(published: true).order(:title).each do |pg|
+            - if params[:controller] == 'pages' and params[:id] == pg.id.to_s
+                li.navigation-item.current
+                    = link_to pg.title.capitalize, page_path(pg)
+            - else
+                li.navigation-item
+                    = link_to pg.title.capitalize, page_path(pg)

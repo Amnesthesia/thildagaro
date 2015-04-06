@@ -1,0 +1,52 @@
+/* CASEIN CUSTOM */
+/* Use this file for your project-specific Casein CSS */
+/*
+ *= require owl.carousel
+ *= require owl.theme
+ *= require bootstrap-wysihtml5
+ */
+.owl-wrapper-outer
+{
+    margin-bottom: 20px;
+    border: 1px solid #CCC;
+    .owl-item
+    {
+        .item
+        {
+            text-align: center;
+
+            .picture-controls
+            {
+                width: 100%;
+                background: black;
+                opacity: 0.75;
+                height: 50px;
+                margin-top: -50px;
+
+                .caption
+                {
+                    width: 95%;
+                    text-align: left;
+                    background: black;
+                    float: left;
+
+                    input
+                    {
+                        background: transparent;
+                        border: none;
+                        color: white;
+                        padding: 15px;
+                        width: 100%;
+                    }
+                }
+
+                .remove
+                {
+                    padding: 15px;
+                    float: left;
+                    width: 5%;
+                }
+            }
+        }
+    }
+}

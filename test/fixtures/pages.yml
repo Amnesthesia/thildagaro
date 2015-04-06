@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: pages
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  content     :text
+#  pictures_id :integer
+#  published   :boolean
+#  layout      :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  pictures_id: 
+  published: false
+  layout: 1
+
+two:
+  title: MyString
+  content: MyText
+  pictures_id: 
+  published: false
+  layout: 1
