@@ -10,20 +10,16 @@
   </script>
 </head>
 <body>
-    <header>
-        <div class="wrapper">
+    <div class="outer-wrapper">
+        <header>
             <%= render partial: 'layouts/header' %>
-        </div>
-    </header>
-    <main data-no-turbolink="nope">
-        <div class="wrapper">
+        </header>
+        <main data-no-turbolink="nope">
             <%= yield %>
-        </div>
-    </main>
-    <footer>
-        <div class="wrapper">
+        </main>
+        <footer>
             <%= render partial: 'layouts/footer' %>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>

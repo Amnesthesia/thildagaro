@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require fancybox
 //= require turbolinks
 //= require owl.carousel
 //= require_tree .
@@ -25,7 +26,7 @@ $(document).ready(function() {
             navigation : true, // Show next and prev buttons
             slideSpeed : 300,
             paginationSpeed : 400,
-            singleItem:true
+            singleItem:true,
 
             // "singleItem:true" is a shortcut for:
             // items : 1,
@@ -36,10 +37,32 @@ $(document).ready(function() {
 
         });
 
+        var owl = $('.owl-carousel');
+
+        owl.owlCarousel({
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            loop: true
+        });
+
+        owl.trigger('owl.play',3000);
+
         if($("#carousel-control-injection-area").length)
         {
             $(".owl-buttons").appendTo("#carousel-control-injection-area");
         }
+    }
+
+    if($(".fancy-image").length)
+    {
+        $(".fancy-image").fancybox({
+            'transitionIn'	:	'elastic',
+            'transitionOut'	:	'elastic',
+            'speedIn'		:	600,
+            'speedOut'		:	200,
+            'overlayShow'	:	true
+        });
     }
 
 });

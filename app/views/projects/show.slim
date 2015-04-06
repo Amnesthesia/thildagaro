@@ -3,8 +3,9 @@ section.carousel.top
     .owl-carousel.owl-them#carousel
         - if @project.pictures.any?
             - @project.pictures.each do |pic|
-                .item== image_tag(pic.path.top_carousel.to_s)
-                    - if !pic.caption.nil?
-                        .caption== pic.caption
+                .item
+                    a.fancy-image(href==image_path(pic.path.top_carousel.to_s))== image_tag(pic.path.side_carousel.to_s)
+                        - if !pic.caption.nil?
+                            .caption== pic.caption
 article.content.full-width
     div.content== @project.content

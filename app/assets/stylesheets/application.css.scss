@@ -11,24 +11,31 @@
  * file per style scope.
  *
  *= require owl.carousel
+ *= require fancybox
  *= require owl.theme
  */
 
  @import "bourbon";
  @import "base/base";
  @import "neat";
+ @import "fonts";
 
-.wrapper
+.outer-wrapper
 {
-    @include outer-container();
+    @include span-columns(12);
+    //@include shift(1);
 }
 
 body
 {
     color: #000000;
+    font-family: helveticaneuelight;
+    @include font-smoothing();
+    @include outer-container();
     header
     {
         margin-top: 3em;
+        padding-bottom: 3em;
         section.logo
         {
             @include span-columns(4);
@@ -50,9 +57,8 @@ body
 
                 li
                 {
-                    margin-left: 25px;
-                    margin-right: 25px;
-                    font-size: 0.825em;
+                    margin-left: 2.5em;
+                    font-size: 0.9em;
 
                     li:last-child
                     {
@@ -62,12 +68,12 @@ body
                     {
                         color: #AAA;
                         font-weight: bold;
-                        font-family: Helvetica, Arial, sans-serif;
+                        font-family: helveticaneuelight, Arial, sans-serif;
                         text-transform: uppercase;
 
                         &:hover
                         {
-                            color: #00FF00;
+                            color: #595a5c;
                         }
                     }
                     &.current
@@ -95,12 +101,12 @@ body
 
             .owl-buttons
             {
-                @include span-columns(1.5);
+                @include span-columns(1.4);
                 float: right;
                 clear: both;
                 color: #AAA;
                 font-weight: bold;
-                font-family: Helvetica, Arial, sans-serif;
+                font-family: helveticaneuelight, Arial, sans-serif;
                 text-transform: uppercase;
                 font-size: 0.75em;
                 .owl-prev
@@ -138,7 +144,16 @@ body
 
         .project-thumb
         {
-            @include span-columns(5.7);
+            @include span-columns(5.9);
+            margin: 2.35765%;
+            margin-right: calc(2.35765% * 0.85);
+            margin-left: 0;
+        }
+
+        .project-thumb:nth-child(2)
+        {
+            margin-left: calc(2.35765% * 0.85);
+            margin-right: 0;
         }
 
         section.carousel.left, section.carousel.right
@@ -159,9 +174,39 @@ body
 
         section.carousel
         {
-            #carousel > .owl-wrapper-outer > .owl-wrapper > .owl-item > .item > img
+
+            #carousel
             {
-                width: 100%;
+                .owl-wrapper
+                {
+                    .owl-item
+                    {
+                        max-height: 600px;
+                        overflow: hidden;
+                        .item img
+                        {
+                            margin-top: -100px;
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+
+                .owl-pagination > .owl-page
+                {
+                    & > span
+                    {
+                        border: 2.5px solid #959595;
+                        width: 16px;
+                        height: 16px;
+                        background: transparent;
+                    }
+
+                    &.active > span
+                    {
+                        background: #959595;
+                    }
+                }
             }
         }
 
@@ -171,8 +216,8 @@ body
             @include span-columns(4);
             &.full-width
             {
-                @include span-columns(3);
-                margin-top: -30px;
+                @include span-columns(6);
+                margin-top: -10px;
                 float: right;
 
                 h1
