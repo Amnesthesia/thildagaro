@@ -25,6 +25,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'habtm_generator'
+gem 'friendly_id'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

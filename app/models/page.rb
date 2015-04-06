@@ -13,6 +13,12 @@
 #
 
 class Page < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title_dashed, use: :slugged
   has_many :pictures, class_name: "Image", as: :resource
   accepts_nested_attributes_for :pictures, allow_destroy: true
+
+  def title_dashed
+      title.gsub(' ', '-')
+  end
 end

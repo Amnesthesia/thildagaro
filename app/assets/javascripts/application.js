@@ -15,6 +15,7 @@
 //= require fancybox
 //= require turbolinks
 //= require owl.carousel
+//= require jquery.hcaptions
 //= require_tree .
 
 $(document).ready(function() {
@@ -48,10 +49,10 @@ $(document).ready(function() {
 
         owl.trigger('owl.play',3000);
 
-        if($("#carousel-control-injection-area").length)
-        {
-            $(".owl-buttons").appendTo("#carousel-control-injection-area");
-        }
+        //if($("#carousel-control-injection-area").length)
+        //{
+        //    $(".owl-buttons").appendTo("#carousel-control-injection-area");
+        //}
     }
 
     if($(".fancy-image").length)
@@ -64,5 +65,9 @@ $(document).ready(function() {
             'overlayShow'	:	true
         });
     }
+
+    $(".caption").hcaptions({
+        effect: "fade"
+    });
 
 });

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406045652) do
+ActiveRecord::Schema.define(version: 20150406053419) do
 
   create_table "casein_admin_users", force: :cascade do |t|
     t.string   "login",                           null: false
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 20150406045652) do
 
   add_index "comments_posts", ["comment_id", "post_id"], name: "comments_posts_index", unique: true
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "images", force: :cascade do |t|
     t.integer  "resource_id"
     t.string   "resource_type"
@@ -69,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150406045652) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.boolean  "front"
+    t.string   "slug"
   end
 
   add_index "pages", ["pictures_id"], name: "index_pages_on_pictures_id"
@@ -92,6 +106,7 @@ ActiveRecord::Schema.define(version: 20150406045652) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "order"
+    t.string   "slug"
   end
 
   add_index "projects", ["pictures_id"], name: "index_projects_on_pictures_id"

@@ -105,6 +105,8 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     habtm_generator (0.3)
@@ -232,6 +234,7 @@ DEPENDENCIES
   dotenv-rails!
   fancybox2-rails (~> 0.2.8)
   font-awesome-sass-rails
+  friendly_id
   habtm_generator
   jbuilder (~> 2.0)
   jquery-rails

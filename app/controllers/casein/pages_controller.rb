@@ -25,6 +25,13 @@ module Casein
     def create
       @page = Page.new page_params
 
+      if !page_params[:front].nil?
+         if Page.exists?(front: true)
+            Page.where(front: true).update_all(front: false)
+         end
+      else
+         page_params[:front] = false
+      end
       if @page.save
         flash[:notice] = 'Woo-fucking-hoo! Sida skapad ;)'
 
@@ -48,6 +55,14 @@ module Casein
       @casein_page_title = 'Uppdatera sida'
 
       @page = Page.find params[:id]
+
+      if !page_params[:front].nil?
+         if Page.exists?(front: true)
+            Page.where(front: true).update_all(front: false)
+         end
+      else
+          page_params[:front] = false
+      end
 
       if @page.update_attributes page_params
           if params[:pictures]
@@ -85,7 +100,7 @@ module Casein
     private
 
       def page_params
-        params.require(:page).permit(:title, :content, :published, :layout, :pictures => [], :captions => [])
+        params.require(:page).permit(:title, :content, :published, :layout, :front, :pictures => [], :captions => [])
       end
 
   end

@@ -1,4 +1,12 @@
 nav#carousel-control-injection-area
+    .owl-buttons
+        .owl-prev
+            = link_to project_path(@prev) do
+                | prev
+        .owl-next
+            = link_to project_path(@next) do
+                | next
+
 section.carousel.top
     .owl-carousel.owl-them#carousel
         - if @project.pictures.any?

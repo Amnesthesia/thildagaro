@@ -7,6 +7,17 @@ class PagesController < ApplicationController
     @pages = Page.all
   end
 
+  def front
+
+     if not Page.exists?(front: true)
+         redirect_to projects_path
+     else
+         @page = Page.where(front: true).first
+
+         render 'show'
+     end
+  end
+
   # GET /pages/1
   # GET /pages/1.json
   def show
@@ -15,7 +26,7 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = Page.find(params[:id])
+      @page = Page.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

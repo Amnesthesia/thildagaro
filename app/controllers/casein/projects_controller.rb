@@ -25,6 +25,12 @@ module Casein
     def create
       @project = Project.new project_params
 
+      if project_params[:order].is_a? Integer and Project.exists?(order: project_params[:order])
+          Project.where(order: project_params[:order]).each do |p|
+              p.increment(order: 1)
+          end
+      end
+
       if @project.save
         flash[:notice] = 'Project created'
 
@@ -45,6 +51,14 @@ module Casein
       @casein_page_title = 'Update project'
 
       @project = Project.find params[:id]
+
+      if project_params[:order].is_a? Integer and Project.exists?(order: project_params[:order])
+          Project.where(order: project_params[:order]).each do |p|
+              p.increment(order: 1)
+          end
+      else
+          project_params[:order] = 0
+      end
 
       if @project.update_attributes project_params
         if params[:pictures]

@@ -109,6 +109,12 @@ body
                 font-family: helveticaneuelight, Arial, sans-serif;
                 text-transform: uppercase;
                 font-size: 0.75em;
+
+                .owl-prev a, .owl-next a
+                {
+                    color: #AAA;
+                }
+
                 .owl-prev
                 {
                     float: left;
@@ -148,6 +154,26 @@ body
             margin: 2.35765%;
             margin-right: calc(2.35765% * 0.85);
             margin-left: 0;
+
+            .drop-panel
+            {
+                .cap-overlay
+                {
+                    padding: 0px;
+
+                    h2
+                    {
+                        font-family: helveticaneuelight;
+                        width: 100%;
+                        padding: 1em;
+                        background: #59c59c;
+                        text-align: left;
+                        opacity: 0.7;
+                        color: white;
+                        font-size: 1em;
+                    }
+                }
+            }
         }
 
         .project-thumb:nth-child(2)
@@ -209,6 +235,8 @@ body
                 }
             }
         }
+
+
 
         article
         {

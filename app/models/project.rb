@@ -16,7 +16,16 @@
 #
 
 class Project < ActiveRecord::Base
-
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
   has_many :pictures, class_name: "Image", as: :resource
   accepts_nested_attributes_for :pictures, allow_destroy: true
+
+
+  def slug_candidates
+      [
+          :title,
+          [:title, :client]
+      ]
+  end
 end
