@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id              :integer          not null, primary key
+#  title           :string
+#  subtitle        :string
+#  content         :text
+#  pictures_id     :integer
+#  client          :string
+#  client_url      :string
+#  completion_date :date
+#  published       :boolean
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subtitle: MyString
+  content: MyText
+  pictures_id: 
+  client: MyString
+  client_url: MyString
+  completion_date: 2015-04-05
+  published: false
+
+two:
+  title: MyString
+  subtitle: MyString
+  content: MyText
+  pictures_id: 
+  client: MyString
+  client_url: MyString
+  completion_date: 2015-04-05
+  published: false

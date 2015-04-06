@@ -1,0 +1,11 @@
+- @projects.each do |project|
+    .project-thumb
+        = link_to project_path(project) do
+
+            .caption(data-target='#')
+                = image_tag(project.pictures.first.path.side_carousel.url)
+            .cap-overlay
+                - if project.subtitle.nil? or project.subtitle.empty?
+                    h2== project.title
+                - else
+                    h2== project.subtitle
