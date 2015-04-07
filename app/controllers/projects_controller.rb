@@ -12,10 +12,16 @@ class ProjectsController < ApplicationController
   def show
       @all_projects = Project.order(order: :asc)
 
-      @next = @all_projects[@all_projects.index(@project) + 1]
-      @prev = @all_projects[@all_projects.index(@project) - 1]
+      if Project.all.size > 1
+          @next = @all_projects[@all_projects.index(@project) + 1]
+          @prev = @all_projects[@all_projects.index(@project) - 1]
 
-      @next = Project.first if Project.last.id < @next.id
+          @next = Project.first if @next.nil? or Project.last.id < @next.id
+      else
+          @next = @project
+          @prev = @project
+      end
+
   end
 
 

@@ -32,6 +32,7 @@ body
     font-family: helveticaneuelight;
     @include font-smoothing();
     @include outer-container();
+    font-size: 12pt;
     header
     {
         margin-top: 3em;
@@ -101,7 +102,7 @@ body
 
             .owl-buttons
             {
-                @include span-columns(1.4);
+                @include span-columns(1.55);
                 float: right;
                 clear: both;
                 color: #AAA;
@@ -159,14 +160,13 @@ body
             {
                 .cap-overlay
                 {
-                    padding: 0px;
-
+                    height: auto;
                     h2
                     {
                         font-family: helveticaneuelight;
                         width: 100%;
-                        padding: 1em;
-                        background: #59c59c;
+                        padding: 10px;
+                        background: #333;
                         text-align: left;
                         opacity: 0.7;
                         color: white;
