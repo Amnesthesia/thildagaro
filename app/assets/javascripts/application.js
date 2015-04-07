@@ -49,10 +49,10 @@ $(document).ready(function() {
 
         owl.trigger('owl.play',3000);
 
-        //if($("#carousel-control-injection-area").length)
-        //{
-        //    $(".owl-buttons").appendTo("#carousel-control-injection-area");
-        //}
+        if($("#carousel-control-injection-area").length)
+        {
+            $(".owl-controls.clickable > .owl-buttons").remove();
+        }
     }
 
     if($(".fancy-image").length)
