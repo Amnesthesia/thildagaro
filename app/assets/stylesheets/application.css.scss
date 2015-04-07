@@ -209,11 +209,12 @@ body
                     {
                         max-height: 600px;
                         overflow: hidden;
+                        text-align: center;
                         .item img
                         {
-                            margin-top: -100px;
-                            width: 100%;
-                            height: auto;
+                            //margin-top: -100px;
+                            height: 100%;
+                            width: auto;
                         }
                     }
                 }
