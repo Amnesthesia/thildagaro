@@ -69,9 +69,11 @@ module Casein
         end
         if params[:captions]
             params[:captions].each do |cap|
-                pic = @project.pictures.find cap.shift
+                if pic.exists?(cap.shift)
+                    pic = @project.pictures.find cap.shift
 
-                pic.update(caption: cap.shift.to_s) unless pic.nil?
+                    pic.update(caption: cap.shift.to_s) unless pic.nil?
+                end
             end
         end
         flash[:notice] = 'Project has been updated'
