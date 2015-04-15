@@ -19,7 +19,7 @@
 			$wrap = $('<div class="drop-panel" />',{position: 'relative', 'z-index': 1, display: 'block', overflow: 'hidden'})
 			        .append($el)
 			        .append($target);
-			
+
 
 
 			$this.replaceWith($wrap);
@@ -41,15 +41,15 @@
 			var overlay_w = opts.width || w,
 				overlay_h = opts.height || h;
 
-			$target.css({ 'width':overlay_w, 'height':overlay_h, 'position':'absolute', 'z-index':33, overflow: 'hidden' });
+			$target.css({ 'width':overlay_w, 'height':overlay_h-6, 'position':'absolute', 'z-index':33, overflow: 'hidden' });
 
 			var _overlay_css = {};
-			
-			if (opts.overlay_bg) { 
-				_overlay_css.background = opts.overlay_bg; 
+
+			if (opts.overlay_bg) {
+				_overlay_css.background = opts.overlay_bg;
 			}
-			if (opts.overlay_opacity<1) { 
-				_overlay_css.opacity = opts.overlay_opacity; 
+			if (opts.overlay_opacity<1) {
+				_overlay_css.opacity = opts.overlay_opacity;
 			}
 
 			// CSS: Overlay X Position
@@ -58,22 +58,22 @@
 				: (opts.overlay_x == 'right')
 					? w-overlay_w
 					: (w - overlay_w) / 2 + 'px';
-			
+
 			// CSS: Overlay Y Position
 			_overlay_css.top = (opts.overlay_y == 'top')
 				? 0
 				: (opts.overlay_y == 'bottom')
 					? h-overlay_h
 					: (h - overlay_h) / 2 + 'px';
-			
+
 			// CSS: Apply rules
-			$target.css(_overlay_css); 
-			
+			$target.css(_overlay_css);
+
 			// slide effect
 			if (opts.effect=='slide') {
 
 				var slide_css = {};
-				
+
 				switch (opts.direction) {
 					case 'top':
 						slide_css.top = '-'+overlay_h+'px';
@@ -99,7 +99,7 @@
 				}, function(){
 					$target.show().stop(true, true).animate(slide_css, +opts.speed, opts.onhide());
 				});
-				
+
 			// fade effect
 			} else if (opts.effect=='fade') {
 				$target.css('z-index',opts.zindex+1).hide();
@@ -108,7 +108,7 @@
 				}, function () {
 					$target.stop(true, true).fadeOut(+opts.speed, opts.onhide());
 				});
-			
+
 			// just show/hide
 			} else {
 				$target.css('z-index',opts.zindex+1).hide();
@@ -122,7 +122,7 @@
 	};
 
 	Captions.prototype = {
-		
+
 		constructor: Captions,
 
 		set_from_attr: function(el, opt){
@@ -140,7 +140,7 @@
 			}
 		}
 	};
-	
+
 	$.fn.hcaptions = function (option) {
 		return this.each(function () {
 			var $this = $(this)
@@ -152,9 +152,9 @@
 	};
 
 	$.fn.hcaptions.defaults = {
-		
+
 		/**
-		 * Selector for caption content 
+		 * Selector for caption content
 		 * @type {String}
 		 */
 		data_selector: '.cap-overlay',
@@ -238,4 +238,4 @@
 		 */
 		onhide: function(){}
 	};
-})(jQuery);  
+})(jQuery);

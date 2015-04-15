@@ -160,18 +160,30 @@ body
             {
                 .cap-overlay
                 {
-                    height: auto;
-                    h2
+                    height: 98%;
+                    width: 100%;
+                    opacity: 0.5;
+                    background: black;
+
+                    h2, h3
                     {
-                        font-family: helveticaneuelight;
-                        width: 100%;
+                        font-family: helveticaneueheavy;
                         padding: 10px;
-                        background: #333;
-                        text-align: left;
-                        opacity: 0.7;
+                        text-align: center;
+                        padding-bottom: 0px;
+                        margin-bottom: 0px;
                         color: white;
-                        font-size: 1em;
+                        font-size: 3em;
+                        margin-top: calc(50% - 1em);
                     }
+                    h3
+                    {
+                        margin-top: 0;
+                        padding-top: 0px;
+                        font-size: 1.75em;
+                        font-family: helveticaneuelight;
+                    }
+
                 }
             }
         }

@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require fancybox
-//= require turbolinks
 //= require owl.carousel
 //= require jquery.hcaptions
 //= require_tree .
@@ -42,12 +41,12 @@ $(document).ready(function() {
 
         owl.owlCarousel({
             autoplay:true,
-            autoplayTimeout:3000,
+            autoplayTimeout:5000,
             autoplayHoverPause:true,
             loop: true
         });
 
-        owl.trigger('owl.play',3000);
+        owl.trigger('owl.play',5000);
 
         if($("#carousel-control-injection-area").length)
         {

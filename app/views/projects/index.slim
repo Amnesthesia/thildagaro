@@ -1,12 +1,15 @@
 - @projects.each do |project|
-    .project-thumb
-        - if project.pictures.size
+    - if project.pictures.any? and !project.pictures.first.nil? and !project.pictures.first.path.nil?
+        .project-thumb
             = link_to project_path(project) do
 
                 .caption(data-target='#')
                     = image_tag(project.pictures.first.path.side_carousel.url)
                 .cap-overlay
                     - if project.subtitle.nil? or project.subtitle.empty?
-                        h2== project.title
+                        h2== project.title.truncate(19)
+                    - elsif !project.subtitle.nil? and !project.title.nil?
+                        h2== project.title.truncate(19)
+                        h3== project.subtitle.truncate(25)
                     - else
-                        h2== project.subtitle
+                        h2== project.subtitle.truncate(19)
