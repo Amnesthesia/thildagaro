@@ -45,6 +45,12 @@ body
                 font-size: 20pt;
             }
         }
+
+        #logo
+        {
+            width: 221px;
+            height: 39px;
+        }
         nav
         {
             @include shift(2);
