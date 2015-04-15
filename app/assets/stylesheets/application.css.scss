@@ -241,15 +241,19 @@ body
                 {
                     & > span
                     {
-                        border: 2.5px solid #959595;
+                        //border: 2.5px solid #959595;
+                        background: image-url("circle.png") no-repeat;
+                        background-size: 100% auto;
                         width: 16px;
                         height: 16px;
-                        background: transparent;
+                    
                     }
 
                     &.active > span
                     {
-                        background: #959595;
+                        //background: #959595;
+                        background: image-url("circle-full.png") no-repeat;
+                        background-size: 100% auto;
                     }
                 }
             }
